@@ -109,3 +109,9 @@ document.querySelectorAll(".buttons a").forEach(button => {
 // Console Greeting
 
 console.log("Welcome to ACA Thiruvallur Ministries Website");
+const menu = document.getElementById("mobile-menu");
+const nav = document.getElementById("nav-links");
+
+menu.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});

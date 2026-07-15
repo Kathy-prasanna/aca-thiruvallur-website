@@ -1541,3 +1541,57 @@ transform:translateY(-8px);
 /*==========================
       END OF STYLESHEET
 ===========================*/
+/* ===============================
+Responsive Navigation
+=============================== */
+
+.menu-toggle{
+display:none;
+font-size:32px;
+cursor:pointer;
+color:#6b0f1a;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+.nav-links li{
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+@media(max-width:900px){
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+display:none;
+flex-direction:column;
+position:absolute;
+top:85px;
+left:0;
+width:100%;
+background:#fff;
+padding:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.nav-links li{
+margin:12px 0;
+}
+
+}
