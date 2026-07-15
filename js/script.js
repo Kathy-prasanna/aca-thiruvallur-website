@@ -4,22 +4,25 @@
 // =========================================
 
 
-// Smooth Scroll for Navigation Links
+
+// ===============================
+// Smooth Scroll Navigation
+// ===============================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener("click", function(e){
 
         e.preventDefault();
 
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(
+            this.getAttribute("href")
+        );
 
-        if (target) {
+        if(target){
 
             target.scrollIntoView({
-
-                behavior: 'smooth'
-
+                behavior:"smooth"
             });
 
         }
@@ -31,87 +34,196 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 
-// Navbar Shadow While Scrolling
+
+// ===============================
+// Navbar Shadow On Scroll
+// ===============================
 
 const header = document.querySelector("header");
 
-window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 40) {
+if(header){
 
-        header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.25)";
+window.addEventListener("scroll",()=>{
+
+
+    if(window.scrollY > 40){
+
+        header.style.boxShadow =
+        "0 5px 20px rgba(0,0,0,.25)";
 
     }
 
-    else {
+    else{
 
-        header.style.boxShadow = "none";
+        header.style.boxShadow="none";
 
     }
 
+
+});
+
+
+}
+
+
+
+
+
+// ===============================
+// Mobile Hamburger Menu
+// ===============================
+
+
+const menuToggle =
+document.querySelector(".menu-toggle");
+
+
+const navLinks =
+document.querySelector(".nav-links");
+
+
+
+if(menuToggle && navLinks){
+
+
+menuToggle.addEventListener("click",()=>{
+
+
+    navLinks.classList.toggle("active");
+
+
+});
+
+
+
+}
+
+
+
+
+
+// ===============================
+// Close Menu After Clicking Link
+// ===============================
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+
+link.addEventListener("click",()=>{
+
+
+    if(navLinks){
+
+        navLinks.classList.remove("active");
+
+    }
+
+
+});
+
+
 });
 
 
 
 
-// Fade-in Animation
 
-const observer = new IntersectionObserver((entries) => {
 
-    entries.forEach(entry => {
+// ===============================
+// Fade In Animation
+// ===============================
 
-        if (entry.isIntersecting) {
 
-            entry.target.classList.add("show");
+const observer = new IntersectionObserver(
+(entries)=>{
 
-        }
 
-    });
+entries.forEach(entry=>{
 
-}, {
 
-    threshold: 0.2
+if(entry.isIntersecting){
 
-});
+entry.target.classList.add("show");
 
-document.querySelectorAll(".hero, .verse, .founder").forEach(section => {
+}
 
-    section.classList.add("hidden");
-
-    observer.observe(section);
 
 });
 
 
+},
+{
+
+threshold:.2
+
+});
 
 
+
+
+document
+.querySelectorAll(
+".hero, .verse, .founder, .gallery-card, .ministry-card"
+)
+.forEach(section=>{
+
+
+section.classList.add("hidden");
+
+observer.observe(section);
+
+
+});
+
+
+
+
+
+
+
+// ===============================
 // Button Hover Animation
+// ===============================
 
-document.querySelectorAll(".buttons a").forEach(button => {
 
-    button.addEventListener("mouseenter", () => {
+document.querySelectorAll(".buttons a")
+.forEach(button=>{
 
-        button.style.transform = "translateY(-3px)";
 
-    });
+button.addEventListener(
+"mouseenter",
+()=>{
 
-    button.addEventListener("mouseleave", () => {
+button.style.transform =
+"translateY(-3px)";
 
-        button.style.transform = "translateY(0px)";
+});
 
-    });
+
+button.addEventListener(
+"mouseleave",
+()=>{
+
+button.style.transform =
+"translateY(0px)";
+
+});
+
 
 });
 
 
 
 
-// Console Greeting
 
-console.log("Welcome to ACA Thiruvallur Ministries Website");
-const menu = document.getElementById("mobile-menu");
-const nav = document.getElementById("nav-links");
+// ===============================
+// Console Message
+// ===============================
 
-menu.addEventListener("click", () => {
-    nav.classList.toggle("active");
-});
+
+console.log(
+"Welcome to ACA Thiruvallur Ministries Website"
+);
