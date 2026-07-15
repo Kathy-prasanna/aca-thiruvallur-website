@@ -473,6 +473,38 @@ header{
     margin-top:35px;
 
 }
+/* ==========================
+        SINGLE BUTTON
+========================== */
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 35px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+
+.btn:hover{
+
+    background:var(--secondary);
+
+    transform:translateY(-5px);
+
+    box-shadow:var(--shadow);
+
+}
 
 
 

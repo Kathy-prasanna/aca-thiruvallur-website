@@ -1,4 +1,32 @@
 // =========================================
+// FIREBASE CONFIGURATION
+// =========================================
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyDhTM6Ui1ap19uWlf0bs9MkHaNuYUZh-HY",
+
+    authDomain: "aca-thiruvallur-ministries.firebaseapp.com",
+
+    projectId: "aca-thiruvallur-ministries",
+
+    storageBucket: "aca-thiruvallur-ministries.firebasestorage.app",
+
+    messagingSenderId: "984087014374",
+
+    appId: "1:984087014374:web:88d5ffbe4d65cac32b0427"
+
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+// =========================================
 // ACA THIRUVALLUR MINISTRIES WEBSITE
 // script.js
 // =========================================
